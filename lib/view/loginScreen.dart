@@ -6,6 +6,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/gestures.dart';
 import 'package:badges/badges.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class loginScreen extends StatelessWidget {
   const loginScreen({Key? key}) : super(key: key);
@@ -445,19 +446,112 @@ class loginScreen extends StatelessWidget {
             ]),
           ).pOnly(left: 30, bottom: 30),
           Card(
-            child: InkWell(
-              splashColor: Colors.blue.withAlpha(30),
-              onTap: () {
-                debugPrint('Card tapped.');
-              },
-              child: const SizedBox(
-                width: 300,
-                height: 300,
-                child: Text('A card that can be tapped'),
+            elevation: 20,
+            shadowColor: Colors.black,
+            child: Container(
+              height: 550,
+              width: 300,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/pixel7.webp"),
+                  fit: BoxFit.fitWidth,
+                  alignment: Alignment.topCenter,
+                ),
               ),
+              child: VStack([
+                HStack([
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 1, color: Colors.transparent),
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.green),
+                    child: Text(
+                      ' NEW ',
+                      style:
+                          GoogleFonts.roboto(fontSize: 15, color: Colors.white),
+                    ),
+                  ).pOnly(left: 20, top: 15),
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 1, color: Colors.transparent),
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.red),
+                    child: Text(
+                      ' 20% OFF ',
+                      style:
+                          GoogleFonts.roboto(fontSize: 15, color: Colors.white),
+                    ),
+                  ).pOnly(left: 115, top: 25),
+                ]),
+                Container(
+                  height: 35,
+                  color: Colors.transparent.withOpacity(0.1),
+                  child: HStack([
+                    Badge(
+                      badgeColor: Colors.black,
+                    ).pOnly(left: 20),
+                    Badge(
+                      badgeColor: Colors.red,
+                    ).pOnly(left: 10),
+                    Badge(
+                      badgeColor: Colors.lightBlueAccent,
+                    ).pOnly(left: 10),
+                    Badge(
+                      badgeColor: Colors.green,
+                    ).pOnly(left: 10),
+                    Icon(Icons.search).pOnly(left: 100),
+                    Text('Quick View'),
+                    SizedBox(
+                      width: 17,
+                    )
+                  ]),
+                ).pOnly(top: 235),
+                Text(
+                  'Brand new phone 128gb, 8GB',
+                  style: GoogleFonts.poppins(fontSize: 18),
+                ).centered().pOnly(top: 10),
+                Text(
+                  'ELECTRONICS',
+                  style: GoogleFonts.poppins(fontSize: 18, color: Colors.blue),
+                ).centered().pOnly(top: 8),
+                HStack([
+                  Text(
+                    '\$250.00  ',
+                    style: TextStyle(
+                        decoration: TextDecoration.lineThrough,
+                        fontSize: 20,
+                        color: Colors.grey),
+                  ).pOnly(top: 10, left: 60),
+                  Text(
+                    '\$199.00',
+                    style: GoogleFonts.roboto(fontSize: 25, color: Colors.red),
+                  ).pOnly(top: 10),
+                ]),
+                Container(
+                  padding: EdgeInsets.all(5),
+                  child: RatingBar.builder(
+                    initialRating: 0,
+                    minRating: 1,
+                    direction: Axis.horizontal,
+                    allowHalfRating: false,
+                    itemCount: 5,
+                    itemPadding: EdgeInsets.symmetric(horizontal: 1),
+                    itemBuilder: (context, _) => Icon(
+                      Icons.star,
+                      size: 1,
+                      color: Colors.amber,
+                    ),
+                    onRatingUpdate: (rating) {
+                      print(rating);
+                    },
+                  ),
+                ).centered()
+              ]),
             ),
-          ),
-      ]).scrollVertical(),
+          ).centered().pOnly(bottom: 30),
+        ]).scrollVertical(),
       ),
     );
   }
