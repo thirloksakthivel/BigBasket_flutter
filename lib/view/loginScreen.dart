@@ -316,7 +316,7 @@ class loginScreen extends StatelessWidget {
                       ),
                     ]).pOnly(top:20,left:30,bottom: 30),
                     Container(
-                      height:200,
+                      height:180,
                       width: 200,
                       decoration: BoxDecoration(border: Border.all(width:0.5,color: Colors.grey)),
                       child:VStack([
@@ -327,9 +327,25 @@ class loginScreen extends StatelessWidget {
                             textStyle: const TextStyle(fontSize: 15),
                           ),
                           onPressed: () {},
-                          child: const Text('Best sellers'),),
+                          child: const Text('Best sellers'),).pOnly(top: 20),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            foregroundColor: Colors.black,
+                            padding: const EdgeInsets.all(12.0),
+                            textStyle: const TextStyle(fontSize: 15),
+                          ),
+                          onPressed: () {},
+                          child: const Text('Top hot deals'),),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            foregroundColor: Colors.black,
+                            padding: const EdgeInsets.all(12.0),
+                            textStyle: const TextStyle(fontSize: 15),
+                          ),
+                          onPressed: () {},
+                          child: const Text('Trending items'),),
                       ]),
-                    ).pOnly(left:30),
+                    ).pOnly(left:30,bottom:30),
               ]).scrollVertical().whFull(context),
       ),
     );
