@@ -316,7 +316,7 @@ class loginScreen extends StatelessWidget {
                       ),
                     ]).pOnly(top:20,left:30,bottom: 30),
                     Container(
-                      height:180,
+                      height:182,
                       width: 200,
                       decoration: BoxDecoration(border: Border.all(width:0.5,color: Colors.grey)),
                       child:VStack([
