@@ -346,6 +346,11 @@ class loginScreen extends StatelessWidget {
                           child: const Text('Trending items'),),
                       ]),
                     ).pOnly(left:30,bottom:30),
+                    Container(
+                      height:150,
+                      width:300,
+                      decoration: BoxDecoration(border: Border.all(width:0.5,color: Colors.grey)),
+                    )
               ]).scrollVertical().whFull(context),
       ),
     );
