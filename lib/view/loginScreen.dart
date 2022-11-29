@@ -7,6 +7,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:flutter/gestures.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class loginScreen extends StatelessWidget {
   const loginScreen({Key? key}) : super(key: key);
@@ -79,8 +80,10 @@ class loginScreen extends StatelessWidget {
           ),
           HStack([
             IconButton(
-              onPressed: () {},
-              icon: new Image.asset("assets/tplane.jpg"),
+              onPressed: () {
+                print("Paper PLane Clicked");
+              },
+              icon: FaIcon(FontAwesomeIcons.solidPaperPlane),color: Colors.blue,
             ).pOnly(left: 10),
             Text('Menu', style: TextStyle(fontSize: 20, color: Colors.red))
                 .pOnly(left: 230),
@@ -449,7 +452,7 @@ class loginScreen extends StatelessWidget {
             elevation: 20,
             shadowColor: Colors.black,
             child: Container(
-              height: 550,
+              height: 580,
               width: 300,
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -525,29 +528,50 @@ class loginScreen extends StatelessWidget {
                         color: Colors.grey),
                   ).pOnly(top: 10, left: 60),
                   Text(
-                    '\$199.00',
+                    '\$190.00',
                     style: GoogleFonts.roboto(fontSize: 25, color: Colors.red),
                   ).pOnly(top: 10),
                 ]),
-                Container(
-                  padding: EdgeInsets.all(5),
-                  child: RatingBar.builder(
-                    initialRating: 0,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: false,
-                    itemCount: 5,
-                    itemPadding: EdgeInsets.symmetric(horizontal: 1),
-                    itemBuilder: (context, _) => Icon(
-                      Icons.star,
-                      size: 1,
-                      color: Colors.amber,
+                ZStack([
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    child: RatingBar.builder(
+                      initialRating: 0,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: false,
+                      itemCount: 5,
+                      itemPadding: EdgeInsets.symmetric(horizontal: 1),
+                      itemBuilder: (context, _) => Icon(
+                        Icons.star,
+                        size: 1,
+                        color: Colors.amber,
+                      ),
+                      onRatingUpdate: (rating) {
+                        print(rating);
+                      },
                     ),
-                    onRatingUpdate: (rating) {
-                      print(rating);
-                    },
+                  ).centered(),
+                  Divider(
+                    thickness: 3,
+                    endIndent: 252,
+                    height: 45,
                   ),
-                ).centered()
+                  Divider(
+                    thickness: 3,
+                    indent:250 ,
+                    height: 45,
+                  ),
+                ]),
+                HStack([
+                  Icon(Iconsax.shuffle).pOnly(left:38,top: 10),
+                  Container(
+                    decoration: BoxDecoration(border: Border.all(width: 1, color: Colors.blue),borderRadius: BorderRadius.circular(50),color: Colors.blue),
+                      child: TextButton(onPressed: () {}, child: Text('  ADD TO BAG  ',style: GoogleFonts.poppins(color: Colors.white),))
+                  ).pOnly(left: 30,top:15),
+                  Icon(Iconsax.heart).pOnly(left:30,top:10),
+                ]),
+                Text('This is THIRLOK')
               ]),
             ),
           ).centered().pOnly(bottom: 30),

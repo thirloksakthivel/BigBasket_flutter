@@ -20,6 +20,7 @@ dependencies:
   iconsax: ^0.0.8
   badges: ^2.0.3
   flutter_rating_bar: ^4.0.1
+  font_awesome_flutter: ^10.2.1
 
 dev_dependencies:
   flutter_test:
