@@ -571,7 +571,6 @@ class loginScreen extends StatelessWidget {
                   ).pOnly(left: 30,top:15),
                   Icon(Iconsax.heart).pOnly(left:30,top:10),
                 ]),
-                Text('This is THIRLOK')
               ]),
             ),
           ).centered().pOnly(bottom: 30),
