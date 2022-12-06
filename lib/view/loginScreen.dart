@@ -8,6 +8,8 @@ import 'package:flutter/gestures.dart';
 import 'package:badges/badges.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bigbasket/activity/homepage/view/txt.dart';
+import 'package:bigbasket/activity/homepage/view/box.dart';
 
 class loginScreen extends StatelessWidget {
   const loginScreen({Key? key}) : super(key: key);
@@ -574,6 +576,10 @@ class loginScreen extends StatelessWidget {
               ]),
             ),
           ).centered().pOnly(bottom: 30),
+          Container(
+            child: txt(content: "THirlok",size: 66,).centered(),
+          ),
+          box(width: 120,height: 150,).centered(),
         ]).scrollVertical(),
       ),
     );
